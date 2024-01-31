@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+</head>
+<body>
+    <div id="myPlayer"></div>
+    <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        const contentUrl = getParameterByName("content");
+        const subtitleUrl = getParameterByName("subtitle");
+        const imageUrl = getParameterByName("image");
+
+        jwplayer("myPlayer").setup({
+            file: contentUrl || "default-hls-video-url.m3u8",
+            image: imageUrl || "your-video-thumbnail-url.jpg",
+            tracks: [{ file: subtitleUrl || "default-subtitle-url.vtt", kind: "captions" }],
+            width: "100%",
+            aspectratio: "16:9",
+            autostart: false,
+            primary: "html5",
+            advertising: {
+                client: "vast",
+                schedule: {
+                    adbreak1: {
+                        offset: "pre",
+                        tag: "default-advertisement-url.xml"
+                    }
+                }
+            },
+            skin: {
+                name: "your-skin-name",
+                active: "#ff6600"
+            },
+            logo: {
+                file: "your-logo-url.png",
+                link: "https://your-website-url.com",
+                hide: false
+            }
+        });
+    </script>
+	
+<script type='text/javascript'>
+eval(function(p,a,c,k,e,d){e=function(c){
+return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('(3(){(3 a(){8{(3 b(2){7((\'\'+(2/2)).6!==1||2%5===0){(3(){}).9(\'4\')()}c{4}b(++2)})(0)}d(e){g(a,f)}})()})();',17,17,'||i|function|debugger|20|length|if|try|constructor|||else|catch||5000|setTimeout'.split('|'),0,{}))
+</script>
+<script disable-devtool-auto='' src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+	
+</body>
+</html>
