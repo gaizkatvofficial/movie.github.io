@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JWPlayer HLS Responsive dengan Subtitle</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+<script type='text/javascript' src='//divorcebelievable.com/5b/06/8a/5b068a66e9ef7fa580a483bf8684947f.js'></script>
+
+<style>
+    body{margin:0 auto;}
+    #player-container {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+<div id="player-container"></div>
+<script>
+    var player = jwplayer('player-container');
+    player.setup({
+        file: 'https://eewh6zs51u.sw-cdnstream.com/hls2/01/03035/wlsoh7oueji5_n/master.m3u8?t=NhKg0iwsMgcVZ-0FwRHrBtdV5Tv1ga3sxlM5NGeqMlg&s=1708409549&e=129600&f=15190111&srv=hkpl82vL0BNi&i=0.4&sp=500&p1=hkpl82vL0BNi&p2=hkpl82vL0BNi&asn=13335', // Ganti URL_VIDEO dengan URL HLS video Anda
+        image: 'https://www.themoviedb.org/t/p/w1280/gq5OlT5ImxsNpkirpgf4rYngd3M.jpg', // Ganti poster.jpg dengan URL gambar poster video Anda
+        aspectratio: '16:9',
+        width: '100%',
+        autostart: false,
+        primary: 'html5',
+        hlshtml: true,
+        stretching: 'uniform',
+        controls: true,
+        playbackRateControls: [0.5, 1, 1.5, 2], // Menampilkan kontrol kecepatan pemutaran
+        responsive: true, // Membuat pemutar responsif
+        tracks: [{ 
+            file: 'https://raw.githubusercontent.com/gaizkatvofficial/subtitle.github.io/main/Captain%20Miller%20(2024).vtt', // Ganti subtitle.vtt dengan URL subtitle Anda
+            label: 'Indonesia', // Label subtitle yang akan ditampilkan di pemutar
+            kind: 'captions',
+            default: true
+        }]
+    });
+</script>
+</body>
+</html>
